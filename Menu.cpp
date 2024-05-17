@@ -2,7 +2,8 @@
 
 Menu::Menu(sf::Font& font, float width, float height, float PositionX, float PositionY, float spacing)
 {
-
+	menuBack.setSize(sf::Vector2f(width, height/6.2));
+	menuBack.setFillColor(sf::Color(204, 204, 204));
 	this->width = width;
 	this->height = height;
 	this->PositionX = PositionX;
@@ -24,6 +25,7 @@ Menu::Menu(sf::Font& font, float width, float height, float PositionX, float Pos
 
 void Menu::drawMenu(sf::RenderWindow& window)
 {
+	window.draw(menuBack);
 	for (int i = 0; i < buttons.size(); i++) {
 
 		buttons[i].drawButton(window);

@@ -18,9 +18,6 @@
     <Font Include="..\VacancyMaster\Montserrat-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\VacancyMaster\VacancyList.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

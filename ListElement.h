@@ -21,6 +21,11 @@ public:
 
 	std::string getTitle();
 	std::string getDescription();
-
+	sf::Text& getTitleS();
+	sf::Text getDescriptionS();
+	sf::ConvexShape getContainerS();
+	void setPositionY(float);
+	bool isMouseOver(sf::RenderWindow&);
+	void setBColor(sf::Color);
 };
 

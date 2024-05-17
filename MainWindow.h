@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Button.h"
 #include "Menu.h"
+#include "List.h"
 
 class MainWindow
 {
@@ -12,7 +13,7 @@ private:
 	float height;
 public:
 	MainWindow();
-	void run(/*Button* button, ButtonList, ButtonList, ButtonList */);
+	void run();
 
 };
 

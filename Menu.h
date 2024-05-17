@@ -8,7 +8,7 @@ class Menu
 {
 private:
 	std::vector<Button> buttons;
-
+	sf::RectangleShape menuBack;
 	float width;
 	float height;
 

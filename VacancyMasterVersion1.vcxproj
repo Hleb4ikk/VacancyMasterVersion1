@@ -148,9 +148,6 @@ ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     <Font Include="..\VacancyMaster\Montserrat-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\VacancyMaster\VacancyList.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="ListElement.cpp" />
