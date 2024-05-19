@@ -16,6 +16,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void ChangePosition(float);
 	std::vector<ListElement>& getList();
+	void add(sf::Font& font, std::string, std::string, float, float );
 	void deleteEl(int,sf::Font&, float, float);
 	void update(sf::Font&, float, float);
 };

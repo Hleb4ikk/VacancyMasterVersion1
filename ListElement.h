@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
+#include "TextField.h"
 class ListElement
 {
 private:
@@ -15,6 +15,7 @@ private:
 	float height;
 	float width;
 public:
+	ListElement();
 	ListElement(sf::Color, sf::Color, sf::Font&, float, float, float, float);
 	void setTitle(std::string);
 	void setDescription(std::string);

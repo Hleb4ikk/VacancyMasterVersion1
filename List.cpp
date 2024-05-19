@@ -32,6 +32,16 @@ std::vector<ListElement>& List::getList()
 	return list;
 
 }
+void List::add(sf::Font& font, std::string title, std::string description, float width, float height) {
+	ListElement el(sf::Color(147, 147, 147), sf::Color(0, 0, 0), font, width / 1.08, height / 10, this->PositionX, this->PositionY + height / 10 * list.size() + height / 35 * list.size());
+
+	el.setTitle(title);
+	el.setDescription(description);
+
+	stream = std::fstream(name, std::ios::app);
+	stream.write((char*)&el, sizeof(ListElement));
+
+}
 
 void List::deleteEl(int index, sf::Font& font, float width, float height)
 {	
@@ -60,6 +70,8 @@ void List::deleteEl(int index, sf::Font& font, float width, float height)
 
 
 }
+
+
 void List::update(sf::Font& font, float width, float height) {
 
 	while (!list.empty()) {
@@ -69,13 +81,11 @@ void List::update(sf::Font& font, float width, float height) {
 	}
 
 	stream = std::fstream(name);
-	std::string s;
+	ListElement el;
 	int i = 0;
-	while (getline(stream, s)) {
+	while (stream.read((char*)&el, sizeof(ListElement))) {
 
 		list.push_back(ListElement(sf::Color(147, 147, 147), sf::Color(0, 0, 0), font, width / 1.08, height / 10, this->PositionX, this->PositionY + height / 10 * i + height / 35 * i));
-		list[i].setTitle(s);
-		s = "";
 		i++;
 	}
 

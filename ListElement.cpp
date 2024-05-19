@@ -1,5 +1,5 @@
 #include "ListElement.h"
-
+ListElement::ListElement() {}
 ListElement::ListElement(sf::Color c, sf::Color textColor, sf::Font& font, float width, float height, float PositionX, float PositionY)
 {
 	this->title.setFont(font);
@@ -50,8 +50,8 @@ void ListElement::setTitle(std::string s)
 void ListElement::setDescription(std::string s)
 {
 
-	title.setString(s);
-	title.setPosition(PositionX + (width - height) / 2 - title.getGlobalBounds().width / 2, PositionY - height / 4);
+	description.setString(s);
+	description.setPosition(PositionX + (width - height) / 2 - title.getGlobalBounds().width / 2, PositionY - height / 4);
 }
 std::string ListElement::getTitle() {
 
