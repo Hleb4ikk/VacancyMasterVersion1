@@ -1,117 +1,31 @@
 #include "ListElement.h"
-ListElement::ListElement() {}
-ListElement::ListElement(sf::Color c, sf::Color textColor, sf::Font& font, float width, float height, float PositionX, float PositionY)
+ListElement::ListElement(){}
+ListElement::ListElement(std::string title, std::string description)
 {
-	this->title.setFont(font);
-	this->title.setCharacterSize(width / 60);
-	this->title.setFillColor(textColor);
-
-	this->width = width;
-	this->height = height;
-
-	container.setFillColor(c);
-
-	float R = this->height / 2;
-
-	container.setPointCount(4 * R + 2);
-
-	int counter = 0;
-
-	for (float y = -R; y <= R; y += 1) {
-
-		container.setPoint(counter, sf::Vector2f(-sqrt(R * R - y * y), y));
-		counter++;
-
-	}
-	for (float y = R; y >= -R; y -= 1) {
-
-		container.setPoint(counter, sf::Vector2f(sqrt(R * R - y * y) + this->width - this->height, y));
-		counter++;
-
-	}
-
-	this->PositionX = PositionX;
-	this->PositionY = PositionY;
-
-
-	this->container.setPosition(this->PositionX, this->PositionY);
-
-
-
+	for (int i = 0; i < title.size(); i++) this->title[i] = title[i];
+	for (int i = title.size(); i < 200; i++) this->title[i] = '\0';
+	for (int i = 0; i < description.size(); i++) this->description[i] = description[i];
+	for (int i = description.size(); i < 200; i++) this->description[i] = '\0';
 }
 
-void ListElement::setTitle(std::string s)
-{
-
-	title.setString(s);
-	title.setPosition(PositionX , PositionY - height / 5);
-}
-
-void ListElement::setDescription(std::string s)
-{
-
-	description.setString(s);
-	description.setPosition(PositionX + (width - height) / 2 - title.getGlobalBounds().width / 2, PositionY - height / 4);
-}
-std::string ListElement::getTitle() {
-
-	return title.getString();
-
-}
-std::string ListElement::getDescription() {
-
-	return description.getString();
-
-}
-
-sf::Text& ListElement::getTitleS()
+std::string ListElement::getTitle()
 {
 	return title;
 }
 
-sf::Text ListElement::getDescriptionS()
+std::string ListElement::getDescription()
 {
 	return description;
 }
 
-sf::ConvexShape ListElement::getContainerS()
+void ListElement::setTitle(std::string title)
 {
-	return container;
-}
-void ListElement::setPositionY(float value) {
-
-	PositionY = value;
-	container.setPosition(sf::Vector2f(container.getPosition().x, container.getPosition().y + value));
-	title.setPosition(sf::Vector2f(title.getPosition().x, title.getPosition().y + value));
-	description.setPosition(sf::Vector2f(description.getPosition().x, description.getPosition().y + value));
-
-}
-bool ListElement::isMouseOver(sf::RenderWindow& window) {
-
-	float mouseX = sf::Mouse::getPosition(window).x;
-	float mouseY = sf::Mouse::getPosition(window).y;
-
-	float btnPosX = container.getPosition().x - height / 2;
-	float btnPosY = container.getPosition().y - height / 2;
-
-	float btnPosWidth = btnPosX + container.getGlobalBounds().width;
-	float btnPosHeight = btnPosY + container.getGlobalBounds().height;
-
-	if (mouseX < btnPosWidth && mouseX > btnPosX && mouseY < btnPosHeight && mouseY > btnPosY) {
-
-		return true;
-
-	}
-
-
-	return false;
+	for (int i = 0; i < title.size(); i++) this->title[i] = title[i];
+	for (int i = title.size(); i < 200; i++) this->title[i] = '\0';
 }
 
-void ListElement::setBColor(sf::Color c)
+void ListElement::setDescription(std::string description)
 {
-
-	container.setFillColor(c);
-
+	for (int i = 0; i < description.size(); i++) this->description[i] = description[i];
+	for (int i = description.size(); i < 200; i++) this->description[i] = '\0';
 }
-
-

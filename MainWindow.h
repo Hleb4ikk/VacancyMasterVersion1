@@ -5,6 +5,7 @@
 #include "Menu.h"
 #include "List.h"
 #include "TextField.h"
+#include "StreamBuffer.h"
 
 class MainWindow
 {

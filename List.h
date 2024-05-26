@@ -2,22 +2,21 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include "ListElement.h"
+#include "StreamBuffer.h"
+#include "ListGraphicalElement.h"
+
 class List
 {
 private:
-	std::string name;
-	std::fstream stream;
-	std::vector<ListElement> list;
+	std::vector<ListGraphicalElement> list;
 	float PositionX;
 	float PositionY;
 public:
-	List(std::string, sf::Font&, float, float, float, float);
+	List(StreamBuffer&, sf::Font&, float, float, float, float);
 	void draw(sf::RenderWindow& window);
 	void ChangePosition(float);
-	std::vector<ListElement>& getList();
-	void add(sf::Font& font, std::string, std::string, float, float );
-	void deleteEl(int,sf::Font&, float, float);
-	void update(sf::Font&, float, float);
+	float getPosition();
+	std::vector<ListGraphicalElement>& getList();
+	void update(StreamBuffer&, sf::Font&, float, float);
 };
 

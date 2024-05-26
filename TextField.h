@@ -12,7 +12,7 @@
 class TextField {
 public:
 	TextField();
-	TextField(int size, sf::Color color, sf::Color BColor, bool sel, float width, float height);
+	TextField(std::string title, int size, sf::Color color, sf::Color BColor, bool sel, float width, float height);
 	bool isSelect();
 	void setText(std::string stroke);
 
@@ -35,7 +35,9 @@ public:
 
 	// Function for event loop:
 	void typedOn(sf::Event input);
+	bool isMouseOver(sf::RenderWindow&);
 private:
+	sf::Text title;
 	sf::Text textbox;
 	sf::RectangleShape background;
 
@@ -65,18 +67,20 @@ private:
 				text << static_cast<char>(charTyped);
 
 			}
-			
+			textbox.setString(text.str() + "_");
 		}
 		// If the key is delete, then delete the char:
 		else if (charTyped == DELETE_KEY) {
 			if (text.str().length() > 0) {
 				deleteLastChar();
 			}
+			textbox.setString(text.str() + "_");
 		}
 		else if (charTyped == ENTER_KEY) {
 
 			isSelected = false;
+			textbox.setString(text.str());
 		}
-		textbox.setString(text.str() + "_");
+
 	}
 };
