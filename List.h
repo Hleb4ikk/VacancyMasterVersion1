@@ -18,5 +18,6 @@ public:
 	float getPosition();
 	std::vector<ListGraphicalElement>& getList();
 	void update(StreamBuffer&, sf::Font&, float, float);
+	void hover(sf::RenderWindow&);
 };
 

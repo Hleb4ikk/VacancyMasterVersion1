@@ -6,6 +6,8 @@
 #include "List.h"
 #include "TextField.h"
 #include "StreamBuffer.h"
+#include "Statistics.h"
+#include "StatisticsGraphical.h"
 
 class MainWindow
 {
@@ -16,6 +18,6 @@ private:
 public:
 	MainWindow();
 	void run();
-
+	bool isInListArea(sf::RectangleShape&, sf::RectangleShape&);
 };
 

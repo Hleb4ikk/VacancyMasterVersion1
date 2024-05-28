@@ -155,6 +155,8 @@ ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Statistics.cpp" />
+    <ClCompile Include="StatisticsGraphical.cpp" />
     <ClCompile Include="StreamBuffer.cpp" />
     <ClCompile Include="TextField.cpp" />
   </ItemGroup>
@@ -165,6 +167,8 @@ ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     <ClInclude Include="ListGraphicalElement.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Statistics.h" />
+    <ClInclude Include="StatisticsGraphical.h" />
     <ClInclude Include="StreamBuffer.h" />
     <ClInclude Include="TextField.h" />
   </ItemGroup>

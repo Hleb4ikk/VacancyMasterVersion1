@@ -121,3 +121,22 @@ void Button::drawButton(sf::RenderWindow& window)
 	window.draw(title);
 
 }
+
+sf::Text& Button::getTitle()
+{
+	return title;
+}
+void Button::hover(sf::RenderWindow& window) {
+
+	if (isMouseOver(window)) {
+
+		setBColor(sf::Color(130, 130, 130));
+
+	}
+	else {
+
+		setBColor(sf::Color(147, 147, 147));
+
+	}
+
+}

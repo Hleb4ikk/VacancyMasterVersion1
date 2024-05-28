@@ -20,6 +20,7 @@ public:
 	Menu(sf::Font&, float, float, float, float, float);
 	std::vector<Button>& getButtons();
 	void drawMenu(sf::RenderWindow&);
-	
+	void hover(sf::RenderWindow&);
+	sf::RectangleShape& getMenuBack();
 };
 

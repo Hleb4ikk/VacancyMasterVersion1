@@ -55,6 +55,24 @@ void List::update(StreamBuffer& buffer, sf::Font& font, float width, float heigh
 	}
 
 }
+void List::hover(sf::RenderWindow& window) {
+
+	for (int i = 0; i < getList().size(); i++) {
+
+		if (getList()[i].isMouseOver(window)) {
+
+			getList()[i].setBColor(sf::Color(130, 130, 130));
+
+		}
+		else {
+
+			getList()[i].setBColor(sf::Color(147, 147, 147));
+
+		}
+
+	}
+
+}
 
 
 

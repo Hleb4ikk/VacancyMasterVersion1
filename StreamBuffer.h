@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 #include "ListElement.h"
+#include <time.h>
 
 class StreamBuffer
 {
@@ -46,5 +47,6 @@ public:
 		}
 		if (counter != 0) return 0;
 	}
+
 };
 

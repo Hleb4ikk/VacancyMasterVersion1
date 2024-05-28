@@ -24,5 +24,7 @@ public:
 	bool isMouseOver(sf::RenderWindow&);
 	void setPosition(float, float);
 	void drawButton(sf::RenderWindow&);
+	sf::Text& getTitle();
+	void hover(sf::RenderWindow&);
 };
 
